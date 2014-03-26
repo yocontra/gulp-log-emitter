@@ -3,11 +3,11 @@ var LogEmitter = function (source) {
 };
 
 LogEmitter.prototype.info = function (message) {
-  process.emit("gulp:log", { level: "info", message: message, source: this.source });
+  this.emit({ level: "info", message: message, source: this.source });
 };
 
 LogEmitter.prototype.warn = function (message) {
-  process.emit("gulp:log", { level: "warn", message: message, source: this.source });
+  this.emit({ level: "warn", message: message, source: this.source });
 };
 
 LogEmitter.prototype.error = function (message) {
@@ -22,13 +22,16 @@ LogEmitter.prototype.error = function (message) {
     data.error = message;
   }
 
-  process.emit("gulp:log", data);
+  this.emit(data);
 };
 
 LogEmitter.prototype.debug = function (message) {
-  process.emit("gulp:log", { level: "debug", message: message, source: this.source });
+  this.emit({ level: "debug", message: message, source: this.source });
 };
 
+LogEmitter.prototype.emit = function (data) {
+  process.emit("gulp:log", data);
+};
 
 module.exports = {
   Logger: function (source) {
