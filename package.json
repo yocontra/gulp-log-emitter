@@ -1,0 +1,26 @@
+{
+  "name": "log-emitter",
+  "version": "0.0.0",
+  "description": "Emit log message objects on node's process object",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonrhodes/log-emitter.git"
+  },
+  "keywords": [
+    "log",
+    "eventemitter",
+    "emit",
+    "process",
+    "gulp"
+  ],
+  "author": "Jason Rhodes <jason.matthew.rhodes@gmail.com> (http://notrobotic.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonrhodes/log-emitter/issues"
+  },
+  "homepage": "https://github.com/jasonrhodes/log-emitter"
+}
