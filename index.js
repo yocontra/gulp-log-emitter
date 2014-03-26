@@ -11,7 +11,17 @@ LogEmitter.prototype.warn = function (message) {
 };
 
 LogEmitter.prototype.error = function (message) {
-	process.emit("gulp:log", { level: "error", message: message, source: this.source });
+	var data = {};
+	data.level = "error";
+	data.message = message;
+	data.source = this.source;
+
+	if (message instanceof Error) {
+		data.message = message.message;
+		data.error = message;
+	}
+
+	process.emit("gulp:log", data);
 };
 
 LogEmitter.prototype.debug = function (message) {
