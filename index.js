@@ -11,10 +11,11 @@ LogEmitter.prototype.warn = function (message) {
 };
 
 LogEmitter.prototype.error = function (message) {
-  var data = {};
-  data.level = "error";
-  data.message = message;
-  data.source = this.source;
+  var data = {
+    level: "error",
+    message: message,
+    source: this.source
+  };
 
   if (message instanceof Error) {
     data.message = message.message;
