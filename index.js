@@ -34,10 +34,11 @@ LogEmitter.prototype.emit = function (data) {
 };
 
 module.exports = {
-  Logger: function (source) {
+  create: function (source) {
     return new LogEmitter(source);
   }
 };
 
-// var log = require('gulp-logemitter').Logger('my plugin');
+// var logger = require('gulp-log-emitter');
+// var log = logger.create('my plugin');
 // log.info("This is something to say");
