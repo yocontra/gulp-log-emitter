@@ -4,7 +4,8 @@ gulp log emitter
 Emit gulp-prefixed log message objects on node's process object
 
 ```javascript
-var log = require("gulp-log-emitter").Logger("my plugin name");
+var logger = require("gulp-log-emitter");
+var log = logger.create("my plugin name");
 
 // later in your plugin
 log.info("This is done");
